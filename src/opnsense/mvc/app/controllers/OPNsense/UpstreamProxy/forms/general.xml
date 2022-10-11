@@ -1,74 +1,74 @@
 <form>
     <field>
-        <id>upstreamproxy.general.useHttpProxy</id>
+        <id>general.useHttpProxy</id>
         <label>Use upstream proxy for outbound HTTP</label>
         <type>checkbox</type>
     </field>
     <field>
-        <id>upstreamproxy.general.httpProxyProto</id>
+        <id>general.httpProxyProto</id>
         <label>HTTP Proxy Protocol</label>
         <type>dropdown</type>
         <help>The protocol used to access the proxy server, HTTP or HTTPS. Not necessarily the same protocol as the URL</help>
     </field>
     <field>
-        <id>upstreamproxy.general.httpProxyAddress</id>
+        <id>general.httpProxyAddress</id>
         <label>HTTP Proxy Address</label>
         <type>text</type>
         <help>IP address or hostname of the proxy</help>
         <hint>e.g. proxy.localdomain</hint>
     </field>
     <field>
-        <id>upstreamproxy.general.httpProxyPort</id>
+        <id>general.httpProxyPort</id>
         <label>HTTP Proxy Port</label>
         <type>text</type>
         <help>Port for the upstream proxy</help>
         <hint>e.g. 3128 or 8080</hint>
     </field>
     <field>
-        <id>upstreamproxy.general.useHttpsProxy</id>
+        <id>general.useHttpsProxy</id>
         <label>Use upstream proxy for outbound HTTPS</label>
         <type>checkbox</type>
     </field>
     <field>
-        <id>upstreamproxy.general.httpsProxyProto</id>
+        <id>general.httpsProxyProto</id>
         <label>HTTPS Proxy Protocol</label>
         <type>dropdown</type>
         <help>The protocol used to access the proxy server, HTTP or HTTPS. Not necessarily the same protocol as the URL</help>
     </field>
     <field>
-        <id>upstreamproxy.general.httpsProxyAddress</id>
+        <id>general.httpsProxyAddress</id>
         <label>HTTPS Proxy Address</label>
         <type>text</type>
         <help>IP address or hostname of the proxy</help>
         <hint>e.g. proxy.localdomain</hint>
     </field>
     <field>
-        <id>upstreamproxy.general.httpsProxyPort</id>
+        <id>general.httpsProxyPort</id>
         <label>HTTPS Proxy Port</label>
         <type>text</type>
         <help>Port for the upstream proxy</help>
         <hint>e.g. 3128 or 8080</hint>
     </field>
     <field>
-        <id>upstreamproxy.general.useFtpProxy</id>
+        <id>general.useFtpProxy</id>
         <label>Use upstream proxy for outbound FTP</label>
         <type>checkbox</type>
     </field>
     <field>
-        <id>upstreamproxy.general.ftpProxyProto</id>
+        <id>general.ftpProxyProto</id>
         <label>FTP Proxy Protocol</label>
         <type>dropdown</type>
         <help>The protocol used to access the proxy server, HTTP or HTTPS. Not necessarily the same protocol as the URL</help>
     </field>
     <field>
-        <id>upstreamproxy.general.ftpProxyAddress</id>
+        <id>general.ftpProxyAddress</id>
         <label>FTP Proxy Address</label>
         <type>text</type>
         <hint>e.g. proxy.localdomain</hint>
         <help>IP address or hostname of the proxy</help>
     </field>
     <field>
-        <id>upstreamproxy.general.ftpProxyPort</id>
+        <id>general.ftpProxyPort</id>
         <label>FTP Proxy Port</label>
         <type>text</type>
         <help>Port for the upstream proxy</help>
