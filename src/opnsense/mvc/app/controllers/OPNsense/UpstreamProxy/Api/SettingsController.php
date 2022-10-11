@@ -39,7 +39,7 @@ class SettingsController extends ApiControllerBase
                 if (!array_key_exists("validations", $result)) {
                     $result["validations"] = array();
                 }
-                $result["validations"]["general.".$msg->getField()] = $msg->getMessage();
+                $result["validations"][$msg->getField()] = $msg->getMessage();
             }
     
             // serialize model to config and save

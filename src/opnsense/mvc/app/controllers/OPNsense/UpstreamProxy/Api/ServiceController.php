@@ -20,4 +20,17 @@ public function reloadAction()
     return array("status" => $status);
 }
 
+public function applyAction()
+{
+    if ($this->request->isPost()) {
+        $backend = new Backend();
+        $bckresult = json_decode(trim($backend->configdRun("upstreamproxy apply")), true);
+        if ($bckresult !== null) {
+            // only return valid json type responses
+            return $bckresult;
+        }
+    }
+    return array("message" => "unable to run config action");
+}
+
 }

@@ -1,46 +1,129 @@
 <model>
-    <mount>//OPNsense/upstreamproxy/general</mount>
+    <mount>//OPNsense/upstreamproxy</mount>
     <description>A model to store upstream proxy settings</description>
     <version>1.0.0</version>
     <items>
+        <general>
             <useHttpProxy type="BooleanField">
                 <required>y</required>
                 <default>0</default>
+                <Constraints>
+                    <check001>
+                        <reference>httpProxyAddress.check001</reference>
+                    </check001>
+                    <check002>
+                        <reference>httpProxyPort.check001</reference>
+                    </check002>
+                </Constraints>
             </useHttpProxy>
             <httpProxyProto type="OptionField">
-                <Default>hprot0</Default>
+                <Required>Y</Required>
+                <Default>hprot1</Default>
                 <OptionValues>
-                    <hprot0 value="0">HTTP</hprot0>
-                    <hprot1 value="1">HTTPS</hprot1>
+                    <hprot1 value="http">HTTP</hprot1>
+                    <hprot2 value="https">HTTPS</hprot2>
                 </OptionValues>
             </httpProxyProto>
-            <httpProxyAddress type="HostnameField"/>
-            <httpProxyPort type="PortField"/>
+            <httpProxyAddress type="HostnameField">
+                <Constraints>
+                    <check001>
+                        <type>SetIfConstraint</type>
+                        <ValidationMessage>Please enter a hostname for the HTTP proxy</ValidationMessage>
+                        <field>useHttpProxy</field>
+                        <check>1</check>
+                    </check001>
+                </Constraints>
+            </httpProxyAddress>
+            <httpProxyPort type="PortField">
+                <Constraints>
+                    <check001>
+                        <type>SetIfConstraint</type>
+                        <ValidationMessage>Please enter a port number for the HTTP proxy</ValidationMessage>
+                        <field>useHttpProxy</field>
+                        <check>1</check>
+                    </check001>
+                </Constraints>
+            </httpProxyPort>
             <useHttpsProxy type="BooleanField">
                 <required>y</required>
                 <default>0</default>
-            </useHttpsProxy>
+                <Constraints>
+                    <check001>
+                        <reference>httpsProxyAddress.check001</reference>
+                    </check001>
+                    <check002>
+                        <reference>httpsProxyPort.check001</reference>
+                    </check002>
+                </Constraints>
+             </useHttpsProxy>
             <httpsProxyProto type="OptionField">
+                <Required>Y</Required>
                 <Default>sprot0</Default>
                 <OptionValues>
-                    <sprot0 value="0">HTTP</sprot0>
-                    <sprot1 value="1">HTTPS</sprot1>
+                    <sprot0 value="http">HTTP</sprot0>
+                    <sprot1 value="https">HTTPS</sprot1>
                 </OptionValues>
             </httpsProxyProto>
-            <httpsProxyAddress type="HostnameField"/>
-            <httpsProxyPort type="PortField"/>
+            <httpsProxyAddress type="HostnameField">
+                <Constraints>
+                    <check001>
+                        <type>SetIfConstraint</type>
+                        <ValidationMessage>Please enter a hostname for the HTTPS proxy</ValidationMessage>
+                        <field>useHttpsProxy</field>
+                        <check>1</check>
+                    </check001>
+                </Constraints>
+            </httpsProxyAddress>
+            <httpsProxyPort type="PortField">
+                <Constraints>
+                    <check001>
+                        <type>SetIfConstraint</type>
+                        <ValidationMessage>Please enter a port number for the HTTPS proxy</ValidationMessage>
+                        <field>useHttpsProxy</field>
+                        <check>1</check>
+                    </check001>
+                </Constraints>
+            </httpsProxyPort>
             <useFtpProxy type="BooleanField">
                 <required>y</required>
                 <default>0</default>
-            </useFtpProxy>
+                <Constraints>
+                    <check001>
+                        <reference>ftpProxyAddress.check001</reference>
+                    </check001>
+                    <check002>
+                        <reference>ftpProxyPort.check001</reference>
+                    </check002>
+                </Constraints>
+           </useFtpProxy>
             <ftpProxyProto type="OptionField">
                 <Default>fprot0</Default>
+                <Required>Y</Required>
                 <OptionValues>
-                    <fprot0 value="0">HTTP</fprot0>
-                    <fprot1 value="1">HTTPS</fprot1>
+                    <fprot0 value="http">HTTP</fprot0>
+                    <fprot1 value="https">HTTPS</fprot1>
                 </OptionValues>
             </ftpProxyProto>
-            <ftpProxyAddress type="HostnameField"/>
-            <ftpProxyPort type="PortField"/>
+            <ftpProxyAddress type="HostnameField">
+                <Constraints>
+                    <check001>
+                        <type>SetIfConstraint</type>
+                        <ValidationMessage>Please enter a hostname for the FTP proxy</ValidationMessage>
+                        <field>useFtpProxy</field>
+                        <check>1</check>
+                    </check001>
+                </Constraints>
+            </ftpProxyAddress>
+            <ftpProxyPort type="PortField">
+                <Constraints>
+                    <check001>
+                        <type>SetIfConstraint</type>
+                        <ValidationMessage>Please enter a port number for the FTP proxy</ValidationMessage>
+                        <field>useFtpProxy</field>
+                        <check>1</check>
+                    </check001>
+                </Constraints>
+            </ftpProxyPort>
+        </general>
     </items>
 </model>

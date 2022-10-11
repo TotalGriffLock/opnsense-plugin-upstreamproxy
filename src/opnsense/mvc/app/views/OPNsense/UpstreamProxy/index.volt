@@ -1,3 +1,6 @@
+<div class="alert alert-info hidden" role="alert" id="responseMsg">
+
+</div>
 {{ partial("layout_partials/base_form",['fields':generalForm,'id':'frm_GeneralSettings'])}}
 <script type="text/javascript">
     $( document ).ready(function() {
@@ -8,22 +11,34 @@
             document.getElementById("upstreamproxy.general.useHttpProxy").addEventListener('click', updateVisibility);
             document.getElementById("upstreamproxy.general.useHttpsProxy").addEventListener('click', updateVisibility);
             document.getElementById("upstreamproxy.general.useFtpProxy").addEventListener('click', updateVisibility);
+            $('.selectpicker').selectpicker('refresh');
         });
 
-        // link save button to API set action
         $("#saveAct").click(function(){
             saveFormToEndpoint(url="/api/upstreamproxy/settings/set",formid='frm_GeneralSettings',callback_ok=function(){
                 // action to run after successful save, for example reconfigure service.
-		ajaxCall(url="/api/upstreamproxy/service/reload", sendData={},callback=function(data,status) {
-		    // action to run after reload
-			window.location.reload();
-		});
+
+
+ajaxCall(url="/api/upstreamproxy/service/reload", sendData={},callback=function(data,status) {
+    // action to run after reload
+});
+
+
+
+
+    $("#responseMsg").removeClass("hidden");
+    ajaxCall(url="/api/upstreamproxy/service/apply", sendData={},callback=function(data,status) {
+        // action to run after reload
+        $("#responseMsg").html(data['message']);
+    });
+
+
+
             });
         });
 
 
     });
-
   function updateVisibility() {
     if (document.getElementById("upstreamproxy.general.useHttpProxy").checked == 0) {
       // Use http proxy is off, hide relevant elements
