@@ -53,7 +53,6 @@ else:
 with open('/usr/local/opnsense/service/conf/configd.conf', 'w') as configfile:
   configd_config.write(configfile, space_around_delimiters=False)
 
-stream = os.popen('service configd restart')
-message += stream.read()
-
 print('{"message":"' + message + '"}')
+
+stream = os.popen('service configd restart')
