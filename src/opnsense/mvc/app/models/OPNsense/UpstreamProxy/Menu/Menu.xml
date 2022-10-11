@@ -1,0 +1,7 @@
+<menu>
+    <System>
+        <Settings>
+            <UpstreamProxy VisibleName="Upstream Proxy" url="/ui/upstreamproxy/"/>
+        </Settings>
+    </System>
+</menu>

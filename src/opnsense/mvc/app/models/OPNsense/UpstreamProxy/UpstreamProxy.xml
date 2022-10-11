@@ -1,0 +1,51 @@
+<model>
+    <mount>//OPNsense/upstreamproxy</mount>
+    <description>A model to store upstream proxy settings</description>
+    <version>1.0.0</version>
+    <items>
+        <general>
+            <useHttpProxy type="BooleanField">
+                <required>y</required>
+                <default>0</default>
+            </useHttpProxy>
+            <httpProxyProto type="OptionField">
+                <Default>0</Default>
+		<multiple>N</multiple>
+                <OptionValues>
+                    <hprot0 value="0">HTTP</hprot0>
+                    <hprot1 value="1">HTTPS</hprot1>
+                </OptionValues>
+            </httpProxyProto>
+            <httpProxyAddress type="HostnameField"/>
+            <httpProxyPort type="PortField"/>
+            <useHttpsProxy type="BooleanField">
+                <required>y</required>
+                <default>0</default>
+            </useHttpsProxy>
+            <httpsProxyProto type="OptionField">
+                <Default>0</Default>
+                <multiple>N</multiple>
+                <OptionValues>
+                    <sprot0 value="0">HTTP</sprot0>
+                    <sprot1 value="1">HTTPS</sprot1>
+                </OptionValues>
+            </httpsProxyProto>
+            <httpsProxyAddress type="HostnameField"/>
+            <httpsProxyPort type="PortField"/>
+            <useFtpProxy type="BooleanField">
+                <required>y</required>
+                <default>0</default>
+            </useFtpProxy>
+            <ftpProxyProto type="OptionField">
+                <Default>0</Default>
+                <multiple>N</multiple>
+                <OptionValues>
+                    <fprot0 value="0">HTTP</fprot0>
+                    <fprot1 value="1">HTTPS</fprot1>
+                </OptionValues>
+            </ftpProxyProto>
+            <ftpProxyAddress type="HostnameField"/>
+            <ftpProxyPort type="PortField"/>
+        </general>
+    </items>
+</model>
