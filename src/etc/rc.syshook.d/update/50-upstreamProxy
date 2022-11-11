@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/local/opnsense/scripts/upstreamproxy/updateConfig.py
