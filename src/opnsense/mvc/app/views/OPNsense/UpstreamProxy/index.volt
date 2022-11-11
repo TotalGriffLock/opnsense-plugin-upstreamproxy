@@ -3,7 +3,14 @@
 </div>
 {{ partial("layout_partials/base_form",['fields':generalForm,'id':'frm_GeneralSettings'])}}
 <script type="text/javascript">
-    $( document ).ready(function() {
+function decodeEntities(encodedString) {
+  var textArea = document.createElement('textarea');
+  textArea.innerHTML = encodedString;
+  if ('remove' in Element.prototype) textArea.remove();
+  return textArea.value;
+}
+
+$( document ).ready(function() {
         var data_get_map = {'frm_GeneralSettings':"/api/upstreamproxy/settings/get"};
         mapDataToFormUI(data_get_map).done(function(data){
             // place actions to run after load, for example update form styles.
@@ -18,27 +25,19 @@
             saveFormToEndpoint(url="/api/upstreamproxy/settings/set",formid='frm_GeneralSettings',callback_ok=function(){
                 // action to run after successful save, for example reconfigure service.
 
+              ajaxCall(url="/api/upstreamproxy/service/reload", sendData={},callback=function(data,status) {
+                  // action to run after reload
+              });
 
-ajaxCall(url="/api/upstreamproxy/service/reload", sendData={},callback=function(data,status) {
-    // action to run after reload
-});
+              $("#responseMsg").removeClass("hidden");
+              ajaxCall(url="/api/upstreamproxy/service/apply", sendData={},callback=function(data,status) {
+                  // action to run after reload
+                  $("#responseMsg").html(decodeEntities(data['message']));
+              });
+          });
+      });
+  });
 
-
-
-
-    $("#responseMsg").removeClass("hidden");
-    ajaxCall(url="/api/upstreamproxy/service/apply", sendData={},callback=function(data,status) {
-        // action to run after reload
-        $("#responseMsg").html(data['message']);
-    });
-
-
-
-            });
-        });
-
-
-    });
   function updateVisibility() {
     if (document.getElementById("upstreamproxy.general.useHttpProxy").checked == 0) {
       // Use http proxy is off, hide relevant elements
