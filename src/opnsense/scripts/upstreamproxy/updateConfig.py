@@ -18,27 +18,27 @@ if os.path.exists('/usr/local/etc/upstreamproxy/upstreamproxy.conf'):
   if upstreamproxy_config.has_option('http','http_proxy'):
     configd_config['environment']['http_proxy'] = upstreamproxy_config['http']['http_proxy']
     configd_config['environment']['HTTP_PROXY'] = upstreamproxy_config['http']['http_proxy']
-    message += "HTTP proxy settings configured "
+    message += "HTTP proxy settings configured <br/> "
   else:
     configd_config.remove_option('environment','http_proxy')
     configd_config.remove_option('environment','HTTP_PROXY')
-    message += "HTTP proxy settings cleared "
+    message += "HTTP proxy settings cleared <br/> "
   if upstreamproxy_config.has_option('https','https_proxy'):
     configd_config['environment']['https_proxy'] = upstreamproxy_config['https']['https_proxy']
     configd_config['environment']['HTTPS_PROXY'] = upstreamproxy_config['https']['https_proxy']
-    message += "HTTPS proxy settings configured "
+    message += "HTTPS proxy settings configured <br/> "
   else:
     configd_config.remove_option('environment','https_proxy')
     configd_config.remove_option('environment','HTTPS_PROXY')
-    message += "HTTPS proxy settings cleared "
+    message += "HTTPS proxy settings cleared <br/> "
   if upstreamproxy_config.has_option('ftp','ftp_proxy'):
     configd_config['environment']['ftp_proxy'] = upstreamproxy_config['ftp']['ftp_proxy']
     configd_config['environment']['FTP_PROXY'] = upstreamproxy_config['ftp']['ftp_proxy']
-    message += "FTP proxy settings configured "
+    message += "FTP proxy settings configured"
   else:
     configd_config.remove_option('environment','ftp_proxy')
     configd_config.remove_option('environment','FTP_PROXY')
-    message += "FTP proxy settings cleared "
+    message += "FTP proxy settings cleared"
 
 else:
 
