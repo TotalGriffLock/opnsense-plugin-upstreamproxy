@@ -15,5 +15,7 @@ env https_proxy=http://proxy_host_name:port curl -LO [....]
 
 # TODO
 Add a plugin description for the OPNsense gui to display when someone clicks (i)
+
 Add support for NO_PROXY environment variable to allow users to specify URLs NOT to proxy
+
 Use a more standard method of showing/hiding GUI elements rather than my awful javascript
