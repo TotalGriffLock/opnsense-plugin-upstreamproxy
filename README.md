@@ -8,7 +8,7 @@ curl -LO https://github.com/TotalGriffLock/opnsense-plugin-upstreamproxy/raw/mai
 pkg add ./os-upstreamproxy-1.0.pkg
 ```
 
-If your firewall is behind a proxy already and need to give curl the proxy settings to download the pkg, beware that this curl is actually a busybox built in command, not a full version of curl, so the normal curl proxy parameters don't work. This does:
+If your firewall is behind a proxy already and you need to specify the proxy settings to download the pkg, beware that this cURL is actually a BusyBox built-in command, not a full version of cURL, so the normal cURL proxy parameters don't work. This does:
 ```
 env https_proxy=http://proxy_host_name:port curl -LO [....]
 ```
