@@ -12,6 +12,10 @@ If your firewall is behind a proxy already and need to give curl the proxy setti
 ```
 env https_proxy=http://proxy_host_name:port curl -LO [....]
 ```
+# Usage
+Once installed the proxy configuration can be set by navigating to System -> Settings 
+
+![image](https://user-images.githubusercontent.com/29902212/203853288-5d490256-e3cb-4db3-83bc-ee46b5a555eb.png)
 
 # TODO
 Add a plugin description for the OPNsense gui to display when someone clicks (i)
