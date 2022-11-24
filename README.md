@@ -1,5 +1,5 @@
 # opnsense-plugin-upstreamproxy
-A plugin for when your opnsense firewall must use a proxy to access the internet, and that proxy is not transparent and therefore must be explicitly specified.
+A plugin for when your OPNsense firewall must use a proxy to access the internet, and that proxy is not transparent and therefore must be explicitly specified.
 
 This is a bit beta-ish at the moment so use it at your own risk! Run these commands on your firewall to install:
 
