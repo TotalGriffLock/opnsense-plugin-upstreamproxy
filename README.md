@@ -1,4 +1,8 @@
+# This plugin has been archived as OPNsense added native support for adding OS environment variables
+# See https://docs.opnsense.org/development/backend/configd.html#id1
+
 # opnsense-plugin-upstreamproxy
+
 A plugin for when your OPNsense firewall must use a proxy to access the internet, and that proxy is not transparent and therefore must be explicitly specified.
 
 This is a bit beta-ish at the moment so use it at your own risk! Run these commands on your firewall to install:
